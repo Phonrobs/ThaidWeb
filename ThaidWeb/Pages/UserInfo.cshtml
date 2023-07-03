@@ -1,0 +1,31 @@
+﻿@page
+@model ThaidWeb.Pages.UserInfoModel
+@{
+    ViewData["Title"] = "Thaid User Info";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TokenList.AllKeys)
+        {
+            <tr>
+                <td>@item</td>
+                <td>@Model.TokenList[item]</td>
+            </tr>
+        }
+
+        @foreach (var item in Model.IdTokenList.AllKeys)
+        {
+            <tr>
+                <td>@item</td>
+                <td>@Model.IdTokenList[item]</td>
+            </tr>
+        }
+    </tbody>
+</table>
