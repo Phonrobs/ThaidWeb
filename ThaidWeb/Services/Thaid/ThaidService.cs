@@ -45,7 +45,8 @@ public class ThaidService : IThaidService
 
     public async Task<ThaidTokenResponse> GetTokenByAuthCodeAsync(string authCode)
     {
-        var redirectUri = HttpUtility.UrlEncode(_settings.RedirectUri);
+        //var redirectUri = HttpUtility.UrlEncode(_settings.RedirectUri);
+        var redirectUri = _settings.RedirectUri;
 
         var formContent = new List<KeyValuePair<string, string>>
         {
@@ -58,11 +59,10 @@ public class ThaidService : IThaidService
 
         var message = new HttpRequestMessage(
            HttpMethod.Post,
-           _settings.TokenEndpont)
+           _settings.TokenEndpoint)
         {
             Headers =
             {
-                { HeaderNames.ContentType, "application/x-www-form-urlencoded" },
                 { HeaderNames.Authorization, $"Basic {authHeader}" }
             },
             Content = new FormUrlEncodedContent(formContent)

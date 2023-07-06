@@ -1,0 +1,19 @@
+﻿{
+  "DetailedErrors": true,
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "Thaid": {
+    "AuthEndpoint": "https://imauth.bora.dopa.go.th/api/v2/oauth2/auth/",
+    "RedirectUri": "YOUR WEBSITE REDIRECT BACK URL",
+    "ClientId": "CLIENT ID GIVEN FROM THAID",
+    "ApiKey": "API KEY GIVEN FROM THAID",
+    "ClientSecret": "CLIENT SECRET GIVEN FROM THAID",
+    "Scopes": [ "pid", "name", "name_en" ],
+
+    "TokenEndpoint": "https://imauth.bora.dopa.go.th/api/v2/oauth2/token/"
+  }
+}
